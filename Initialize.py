@@ -1,3 +1,5 @@
 # Implements Dijsktra's Algorithm
 
-import Topology
+from Topology import Topology
+
+T1 = Topology()
