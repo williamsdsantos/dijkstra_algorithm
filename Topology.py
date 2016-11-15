@@ -2,10 +2,11 @@
 
 class Topology:
     def __init__(self):
-        Nodes = []
-        Links = {}
+        self.Nodes = []
+        self.Links = []
+        ElemLink = []
 
-        with open('data/topologies/P2P4', 'r') as TopologyData:
+        with open('data/topologies/PacificBell', 'r') as TopologyData:
             # Reads nodes from topology FileName
             Header1 = TopologyData.readline()
             Header2 = TopologyData.readline()
@@ -15,10 +16,9 @@ class Topology:
                 Data = line.split()
                 try:
                     NodeID = Data[2]
+                    self.Nodes.append(NodeID)
                 except:
                     break
-
-            #add_Node(self, NodeID)
 
             # Reads links from topology FileName
             Header4 = TopologyData.readline()
@@ -31,13 +31,7 @@ class Topology:
                     Origin = Data[2]
                     Destination = Data[3]
                     Length = Data[4]
+                    ElemLink = [Origin, Destination, Length]
+                    self.Links.append(ElemLink)
                 except:
                     break
-
-            #add_Link(self, Origin, Destination, Length)
-
-    def add_Node(self, NodeID):
-        pass
-
-    def add_Link(self, Origin, Destination, Length):
-        pass
