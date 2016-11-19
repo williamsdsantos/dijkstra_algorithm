@@ -1,1 +1,1 @@
-Just for learning and some tests.
+Just for learning.
